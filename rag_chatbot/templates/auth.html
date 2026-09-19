@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block head_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}?v=3" />
+{% endblock %}
+
+{% block content %}
+  <div class="auth-root layer">
+    <div class="auth-left">
+      <div class="rects-wrap">
+        <svg viewBox="0 0 260 260" width="260" height="260" aria-hidden="true">
+          <rect class="rect-1" x="20" y="70" width="180" height="120" rx="10" />
+          <rect class="rect-2" x="45" y="45" width="160" height="140" rx="10" />
+          <rect class="rect-3" x="70" y="25" width="140" height="170" rx="10" />
+        </svg>
+      </div>
+
+      <h1 class="brand-name">DocuMind RAG</h1>
+      <div class="brand-tag">DOCUMENT INTELLIGENCE SYSTEM</div>
+      <div style="margin-top: 22px; color: var(--text-muted); font-family: 'IBM Plex Mono', monospace; letter-spacing: 2px; font-size: 11px;">
+        "Upload any document. Ask anything."
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-right-card">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-banner show {{ messages[0][0] }}">
+              <button class="flash-close" type="button" data-flash-close>[✕]</button>
+              <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-muted);">
+                {{ messages[0][1] }}
+              </div>
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <div class="tabs" role="tablist" aria-label="Auth tabs">
+          <div class="tab-indicator" id="tab-indicator"></div>
+          <button class="tab-btn active" type="button" data-tab="signin">SIGN IN</button>
+          <button class="tab-btn" type="button" data-tab="signup">SIGN UP</button>
+        </div>
+
+        <!-- SIGN IN -->
+        <div class="form-panel active" id="panel-signin" role="tabpanel">
+          <div class="form-label">SIGN IN TO YOUR ACCOUNT</div>
+          <form method="POST" action="{{ url_for('auth_login') }}">
+            {{ login_form.hidden_tag() }}
+
+            <div style="margin-top: 10px;">
+              <div class="form-label" style="margin-top: 0;">Username or Email</div>
+              {{ login_form.username_email(class_="field", id="signin-username") }}
+              <div class="inline-error" id="signin-username-error">Required</div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <div class="form-label">Password</div>
+              <div class="password-row">
+                {{ login_form.password(class_="field", id="signin-password") }}
+                <button class="toggle-eye" type="button" id="signin-toggle-eye">👁</button>
+              </div>
+              <div class="inline-error" id="signin-password-error">Required</div>
+            </div>
+
+            <div style="margin-top: 18px;">
+              <button class="btn-primary" type="submit" id="signin-submit">SIGN IN →</button>
+            </div>
+          </form>
+
+          <div class="auth-footer-note">
+            No account?
+            <button class="linkish" type="button" id="to-signup">Create one →</button>
+          </div>
+        </div>
+
+        <!-- SIGN UP -->
+        <div class="form-panel" id="panel-signup" role="tabpanel">
+          <div class="form-label">CREATE AN ACCOUNT</div>
+          <form method="POST" action="{{ url_for('auth_register') }}" id="signup-form">
+            {{ register_form.hidden_tag() }}
+
+            <div style="margin-top: 10px;">
+              <div class="form-label">Full Name</div>
+              {{ register_form.full_name(class_="field", id="signup-fullname") }}
+              <div class="inline-error" id="signup-fullname-error">Required</div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <div class="form-label">Username</div>
+              {{ register_form.username(class_="field", id="signup-username") }}
+              <div class="inline-error" id="signup-username-error">3-20 chars: A-Z a-z 0-9 _</div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <div class="form-label">Email</div>
+              {{ register_form.email(class_="field", id="signup-email") }}
+              <div class="inline-error" id="signup-email-error">Valid email required</div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <div class="form-label">Password</div>
+              <div class="password-row">
+                {{ register_form.password(class_="field", id="signup-password") }}
+                <button class="toggle-eye" type="button" id="signup-toggle-eye">👁</button>
+              </div>
+              <div class="password-strength" aria-hidden="true">
+                <div id="password-strength-bar-fill"></div>
+              </div>
+              <div class="helper-row" id="password-strength-label">Weak</div>
+              <div class="inline-error" id="signup-password-error">6+ characters required</div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <div class="form-label">Confirm Password</div>
+              <div class="password-row" style="grid-template-columns: 1fr 44px;">
+                {{ register_form.confirm_password(class_="field", id="signup-confirm-password") }}
+                <div class="toggle-eye" style="display:flex; align-items:center; justify-content:center;" id="confirm-match-icon">
+                  ✗
+                </div>
+              </div>
+              <div class="inline-error" id="signup-confirm-error">Passwords must match</div>
+            </div>
+
+            <div style="margin-top: 18px;">
+              <button class="btn-primary" type="submit" id="signup-submit">CREATE ACCOUNT →</button>
+            </div>
+          </form>
+
+          <div class="auth-footer-note">
+            Already have an account?
+            <button class="linkish" type="button" id="to-signin">Sign in →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script type="module" src="{{ url_for('static', filename='js/auth.js') }}?v=3"></script>
+{% endblock %}
+

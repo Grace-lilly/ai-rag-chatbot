@@ -1,0 +1,117 @@
+:root {
+  --sidebar-width: 280px;
+  --navbar-height: 56px;
+  --input-bar-height: 72px;
+  --drawer-max-height: 420px;
+
+  --bg: #F4F7FB;
+  --surface: #FFFFFF;
+  --card: #FFFFFF;
+  --border: #D8E1EA;
+  --navbar-bg: #FFFFFF;
+  --sidebar-bg: #F7F9FC;
+
+  --primary: #2563EB;
+  --secondary: #0F766E;
+  --active: #7C3AED;
+
+  --success: #0F766E;
+  --warning: #D97706;
+  --danger: #DC2626;
+
+  --text-primary: #0F172A;
+  --text-muted: #475569;
+  --text-dim: #6B7C93;
+
+  --grid-dot: #D2E0EE;
+  --bubble-user-bg: #E0E7FF;
+}
+
+:root[data-theme="light"] {
+  --bg: #F4F7FB;
+  --surface: #FFFFFF;
+  --card: #FFFFFF;
+  --border: #D8E1EA;
+  --navbar-bg: #FFFFFF;
+  --sidebar-bg: #F7F9FC;
+
+  --primary: #2563EB;
+  --secondary: #0F766E;
+  --active: #7C3AED;
+
+  --success: #0F766E;
+  --warning: #D97706;
+  --danger: #DC2626;
+
+  --text-primary: #0F172A;
+  --text-muted: #475569;
+  --text-dim: #6B7C93;
+
+  --grid-dot: #D2E0EE;
+  --bubble-user-bg: #E0E7FF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Lora", serif;
+  background: radial-gradient(circle at top left, #F7FAFD 0%, #F2F6FB 40%, #EDF4FA 100%);
+  color: var(--text-primary);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--grid-dot) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.layer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrollbars */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 2px;
+}
+
+a {
+  color: inherit;
+}
+
+button, input, textarea, select {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.syne {
+  font-family: "Syne", sans-serif;
+}
+
+.ease {
+  transition: 0.15s ease;
+}
+

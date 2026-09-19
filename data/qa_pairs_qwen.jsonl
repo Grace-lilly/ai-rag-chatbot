@@ -1,0 +1,1600 @@
+
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the four essential elements of a design pattern?"},
+      {"role": "assistant", "content": "The four essential elements are: (1) Pattern Name – a handle to describe the design problem and solution; (2) Problem – describes when to apply the pattern and its context; (3) Solution – describes the elements, relationships, responsibilities, and collaborations; (4) Consequences – the results and trade-offs of applying the pattern."}
+    ],
+    "id": "Q001",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the MVC triad and what are its three components?"},
+      {"role": "assistant", "content": "MVC (Model/View/Controller) is a triad of classes used to build user interfaces in Smalltalk-80. The Model is the application object, the View is the screen presentation, and the Controller defines how the user interface reacts to user input. MVC decouples these objects to increase flexibility and reuse."}
+    ],
+    "id": "Q002",
+    "difficulty": "easy",
+    "tags": ["concept", "definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "How many design patterns are in the GoF catalog described in the notes?"},
+      {"role": "assistant", "content": "The catalog contains 23 design patterns. They are organized by purpose (creational, structural, behavioral) and by scope (class or object patterns)."}
+    ],
+    "id": "Q003",
+    "difficulty": "easy",
+    "tags": ["fact"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the three purposes used to classify design patterns?"},
+      {"role": "assistant", "content": "Design patterns are classified by three purposes: (1) Creational – concern the process of object creation; (2) Structural – deal with the composition of classes or objects; (3) Behavioral – characterize the ways in which classes or objects interact and distribute responsibility."}
+    ],
+    "id": "Q004",
+    "difficulty": "easy",
+    "tags": ["concept", "definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Singleton pattern?"},
+      {"role": "assistant", "content": "The Singleton pattern ensures a class has only one instance and provides a global point of access to it. The class itself is responsible for keeping track of its sole instance so no other instance can be created."}
+    ],
+    "id": "Q005",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Observer pattern?"},
+      {"role": "assistant", "content": "The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. In MVC, it is used to implement a subscribe/notify protocol between models and views."}
+    ],
+    "id": "Q006",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Factory Method pattern?"},
+      {"role": "assistant", "content": "The Factory Method pattern defines an interface for creating an object but lets subclasses decide which class to instantiate. It lets a class defer instantiation to subclasses. It is also known as Virtual Constructor."}
+    ],
+    "id": "Q007",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Decorator pattern?"},
+      {"role": "assistant", "content": "The Decorator pattern attaches additional responsibilities to an object dynamically and provides a flexible alternative to subclassing for extending functionality. It captures relationships that support embellishment by transparent enclosure."}
+    ],
+    "id": "Q008",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What does the Composite pattern do?"},
+      {"role": "assistant", "content": "The Composite pattern composes objects into tree structures to represent part-whole hierarchies and lets clients treat individual objects and compositions uniformly. It captures the essence of recursive composition in object-oriented terms."}
+    ],
+    "id": "Q009",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Strategy pattern?"},
+      {"role": "assistant", "content": "The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable, letting the algorithm vary independently from clients that use it. In Lexi, Compositors are strategies encapsulating different formatting algorithms."}
+    ],
+    "id": "Q010",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Abstract Factory pattern and its alternate name?"},
+      {"role": "assistant", "content": "The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. It is also known as Kit and is most appropriate when the number and kinds of product objects stay constant but products differ across specific families."}
+    ],
+    "id": "Q011",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Builder pattern?"},
+      {"role": "assistant", "content": "The Builder pattern separates the construction of a complex object from its representation so that the same construction process can create different representations. In the RTF converter example, the converter class is the builder and the RTFReader is the director."}
+    ],
+    "id": "Q012",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Prototype pattern?"},
+      {"role": "assistant", "content": "The Prototype pattern specifies the kinds of objects to create using a prototypical instance and creates new objects by copying (cloning) this prototype. It allows adding and removing products at run-time and reduces subclassing."}
+    ],
+    "id": "Q013",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent and alternate name of the Adapter pattern?"},
+      {"role": "assistant", "content": "The Adapter pattern converts the interface of a class into another interface clients expect, letting incompatible classes work together. It is also known as Wrapper and can be implemented as either a class adapter or an object adapter."}
+    ],
+    "id": "Q014",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the intent of the Bridge pattern and its alternate name?"},
+      {"role": "assistant", "content": "The Bridge pattern decouples an abstraction from its implementation so that the two can vary independently. It is also known as Handle/Body. It prevents a permanent binding between abstraction and implementation and ensures changes in implementation do not impact clients."}
+    ],
+    "id": "Q015",
+    "difficulty": "easy",
+    "tags": ["definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the scope criterion for classifying design patterns?"},
+      {"role": "assistant", "content": "Scope specifies whether a pattern applies primarily to classes or to objects. Class patterns deal with class-subclass relationships established through inheritance (static, compile-time). Object patterns deal with object relationships that can be changed at run-time and are more dynamic."}
+    ],
+    "id": "Q016",
+    "difficulty": "easy",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the seven design problems identified in the Lexi document editor case study?"},
+      {"role": "assistant", "content": "The seven design problems in Lexi are: (1) Document structure, (2) Formatting, (3) Embellishing the user interface, (4) Supporting multiple look-and-feel standards, (5) Supporting multiple window systems, (6) User operations, and (7) Spelling checking and hyphenation."}
+    ],
+    "id": "Q017",
+    "difficulty": "easy",
+    "tags": ["concept", "application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the Glyph class and what are its three basic responsibilities in Lexi?"},
+      {"role": "assistant", "content": "Glyph is an abstract class for all objects that can appear in a document structure. Its three basic responsibilities are: (1) knowing how to draw themselves; (2) knowing what space they occupy; (3) knowing their children and parent. Subclasses define both primitive elements (characters, images) and structural elements (rows, columns)."}
+    ],
+    "id": "Q018",
+    "difficulty": "easy",
+    "tags": ["concept", "definition"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is recursive composition?"},
+      {"role": "assistant", "content": "Recursive composition is a technique for representing hierarchically structured information by building increasingly complex elements out of simpler ones. It gives a way to compose a document out of simple graphical elements and its essence is captured in object-oriented terms by the Composite pattern."}
+    ],
+    "id": "Q019",
+    "difficulty": "easy",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the role of the Director in the Builder pattern?"},
+      {"role": "assistant", "content": "The Director constructs an object using the Builder interface and notifies the builder whenever a part of the product should be built. In the RTF converter example, the RTFReader is the Director — it parses the RTF document and uses the TextConverter (builder) to perform the conversion."}
+    ],
+    "id": "Q020",
+    "difficulty": "easy",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is transparent enclosure in the context of Lexi's embellishment design?"},
+      {"role": "assistant", "content": "Transparent enclosure combines (1) single-child composition and (2) compatible interfaces. Clients generally cannot tell whether they are dealing with the component or its enclosure since the enclosure simply delegates all operations to its component. This concept underpins MonoGlyph and is the basis of the Decorator pattern."}
+    ],
+    "id": "Q021",
+    "difficulty": "medium",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the four consequences of the Abstract Factory pattern?"},
+      {"role": "assistant", "content": "The four consequences are: (1) It isolates concrete classes by encapsulating creation responsibility; (2) It makes exchanging product families easy since the concrete factory appears only once; (3) It promotes consistency among products by enforcing use of objects from only one family; (4) Supporting new kinds of products is difficult since the factory interface fixes the set of products that can be created."}
+    ],
+    "id": "Q022",
+    "difficulty": "medium",
+    "tags": ["concept", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the three key consequences of the Builder pattern?"},
+      {"role": "assistant", "content": "The three key consequences are: (1) It lets you vary a product's internal representation since the builder hides the product's structure behind an abstract interface; (2) It isolates code for construction and representation, improving modularity; (3) It gives finer control over the construction process since the product is built step by step under the director's control."}
+    ],
+    "id": "Q023",
+    "difficulty": "medium",
+    "tags": ["concept", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the five benefits of the Singleton pattern?"},
+      {"role": "assistant", "content": "The five benefits are: (1) Controlled access to sole instance; (2) Reduced name space by avoiding global variables; (3) Permits refinement of operations and representation; (4) Permits a variable number of instances; (5) More flexible than class operations."}
+    ],
+    "id": "Q024",
+    "difficulty": "medium",
+    "tags": ["concept", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "How does the Compositor-Composition split support the Strategy pattern in Lexi?"},
+      {"role": "assistant", "content": "The split ensures strong separation between the document's physical structure code and the formatting algorithm code. Each Compositor subclass (strategy) implements a different line-breaking algorithm; the Composition (context) delegates formatting to it and can change the algorithm at run-time via SetCompositor. New Compositor subclasses can be added without touching Glyph classes, and vice versa."}
+    ],
+    "id": "Q025",
+    "difficulty": "medium",
+    "tags": ["application", "concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the two ways to parameterize a system by the classes of objects it creates?"},
+      {"role": "assistant", "content": "The two ways are: (1) Subclass the object-creating class — corresponds to Factory Method, but may require new subclasses just to change the product class; (2) Define an object responsible for knowing the product class and make it a system parameter — corresponds to Abstract Factory, Builder, and Prototype, which rely on object composition and are more flexible."}
+    ],
+    "id": "Q026",
+    "difficulty": "medium",
+    "tags": ["concept", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the difference between a class adapter and an object adapter?"},
+      {"role": "assistant", "content": "A class adapter inherits publicly from Target and privately from Adaptee (making it a subtype of Target only), can override Adaptee behavior, but commits to a concrete Adaptee class. An object adapter uses composition to hold an Adaptee instance, can work with many Adaptees and their subclasses, but makes it harder to override Adaptee behavior."}
+    ],
+    "id": "Q027",
+    "difficulty": "medium",
+    "tags": ["concept", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What design patterns does MVC use and for what purpose?"},
+      {"role": "assistant", "content": "MVC uses Observer to decouple views from models (notifying views when the model changes), Composite to support nested views via CompositeView, and Strategy for the View-Controller relationship (different controllers represent different response strategies). It also uses Factory Method to specify the default controller class and Decorator to add scrolling to views."}
+    ],
+    "id": "Q028",
+    "difficulty": "medium",
+    "tags": ["application", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the four participants in the Builder pattern and their roles?"},
+      {"role": "assistant", "content": "The four participants are: (1) Builder (TextConverter) — specifies an abstract interface for creating parts of a Product; (2) ConcreteBuilder (ASCIIConverter, TeXConverter) — constructs and assembles product parts, and provides an interface to retrieve the product; (3) Director (RTFReader) — constructs an object using the Builder interface; (4) Product (ASCIIText, TeXText) — represents the complex object under construction."}
+    ],
+    "id": "Q029",
+    "difficulty": "medium",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the MonoGlyph class and how does it support the Decorator pattern?"},
+      {"role": "assistant", "content": "MonoGlyph is a Glyph subclass serving as an abstract class for embellishment glyphs like Border. It stores a reference to a component and forwards all requests to it, making it transparent to clients by default. Subclasses override specific operations (e.g., Draw) to add embellishment behavior, realizing the Decorator pattern through transparent enclosure."}
+    ],
+    "id": "Q030",
+    "difficulty": "medium",
+    "tags": ["application", "concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the two recurring themes across all creational design patterns?"},
+      {"role": "assistant", "content": "The two recurring themes are: (1) They all encapsulate knowledge about which concrete classes the system uses; (2) They hide how instances of these classes are created and put together. Creational patterns become important as systems evolve to depend more on object composition than class inheritance."}
+    ],
+    "id": "Q031",
+    "difficulty": "medium",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the Intersection of Functionality approach for the Window class and its limitation?"},
+      {"role": "assistant", "content": "The Intersection of Functionality approach provides only functionality common to all window systems. Its limitation is that the Window interface ends up being only as powerful as the least capable window system, preventing use of advanced features even if most window systems support them."}
+    ],
+    "id": "Q032",
+    "difficulty": "medium",
+    "tags": ["concept", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the two additional consequences of the Factory Method pattern?"},
+      {"role": "assistant", "content": "The two additional consequences are: (1) Provides hooks for subclasses — creating objects with a factory method is more flexible and gives subclasses a hook for providing extended object versions; (2) Connects parallel class hierarchies — factory methods are called by creators, and parallel hierarchies result when a class delegates some responsibilities to a separate class."}
+    ],
+    "id": "Q033",
+    "difficulty": "medium",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the prototype manager and when is it used?"},
+      {"role": "assistant", "content": "A prototype manager is a registry of available prototypes used when the number of prototypes in a system is not fixed (created and destroyed dynamically). Clients store and retrieve prototypes from the registry rather than managing them directly, and ask the registry for a prototype before cloning it."}
+    ],
+    "id": "Q034",
+    "difficulty": "medium",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the applicability conditions for using the Bridge pattern?"},
+      {"role": "assistant", "content": "Use Bridge when: you want to avoid a permanent binding between abstraction and implementation; both should be extensible by subclassing; changes in implementation should have no impact on clients; you want to hide implementation completely from clients (in C++); you have a proliferation of classes; or you want to share an implementation among multiple objects while hiding this from the client."}
+    ],
+    "id": "Q035",
+    "difficulty": "medium",
+    "tags": ["application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the six approaches for selecting a design pattern described in the notes?"},
+      {"role": "assistant", "content": "The six approaches are: (1) Consider how design patterns solve design problems; (2) Scan Intent sections of patterns; (3) Study how patterns interrelate; (4) Study patterns of like purpose; (5) Examine causes of redesign to see if your problem involves one; (6) Consider what should be variable in your design — focus on encapsulating the concept that varies."}
+    ],
+    "id": "Q036",
+    "difficulty": "medium",
+    "tags": ["application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "How does MVC decouple views and models?"},
+      {"role": "assistant", "content": "MVC decouples views and models by establishing a subscribe/notify protocol. A view must ensure its appearance reflects the model's state. Whenever the model's data changes, the model notifies all views that depend on it, giving each view an opportunity to update itself. This allows multiple views to be attached to a model to provide different presentations."}
+    ],
+    "id": "Q037",
+    "difficulty": "medium",
+    "tags": ["concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the WindowImp class and why is it used in Lexi?"},
+      {"role": "assistant", "content": "WindowImp is an abstract class encapsulating window-system-dependent code. It is defined to separate the Window class hierarchy from different window system implementations. Using WindowImp, Lexi supports multiple window systems (Mac, PM, Windows, X) without making the Window abstraction platform-dependent — corresponding to the Bridge pattern."}
+    ],
+    "id": "Q038",
+    "difficulty": "medium",
+    "tags": ["application", "concept"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the three implementation techniques mentioned for the Abstract Factory pattern?"},
+      {"role": "assistant", "content": "The three techniques are: (1) Factories as singletons — one instance per product family; (2) Creating the products — concrete subclasses specify products by overriding factory methods, and the Prototype pattern can be used when many product families are possible; (3) Defining extensible factories — adding a new product kind requires changing the Abstract Factory interface and all dependent classes."}
+    ],
+    "id": "Q039",
+    "difficulty": "medium",
+    "tags": ["concept", "application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the relationship between Abstract Factory and Singleton?"},
+      {"role": "assistant", "content": "A concrete factory is often a Singleton since an application typically needs only one instance of a concrete factory per product family. The notes also state that many patterns including Abstract Factory, Builder, and Prototype can be implemented using the Singleton pattern."}
+    ],
+    "id": "Q040",
+    "difficulty": "medium",
+    "tags": ["analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the key difference between Abstract Factory and Builder patterns?"},
+      {"role": "assistant", "content": "Abstract Factory emphasizes creating families of product objects (simple or complex) and returns the product immediately. Builder focuses on constructing a complex object step by step under the director's control, returning the product only as a final step. What a Builder often builds is a Composite."}
+    ],
+    "id": "Q041",
+    "difficulty": "hard",
+    "tags": ["analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What considerations make the Prototype pattern the best choice for the drawing editor framework described in the notes?"},
+      {"role": "assistant", "content": "Prototype is best for the drawing editor framework because it only requires implementing a Clone operation on each Graphics class, reducing the number of classes. Factory Method would require a GraphicTool subclass per Graphic subclass, and Abstract Factory would require an equally large GraphicsFactory hierarchy. Prototype also allows Clone to be used for purposes beyond pure instantiation."}
+    ],
+    "id": "Q042",
+    "difficulty": "hard",
+    "tags": ["analysis", "application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "How does the Singleton pattern support subclassing via the registry approach?"},
+      {"role": "assistant", "content": "In the registry approach, Singleton classes register their singleton instance by name in a well-known registry. The Instance operation queries the registry by name to return the appropriate singleton. This frees Instance from knowing all possible Singleton classes or instances, making it more flexible than placing subclass determination directly in Instance."}
+    ],
+    "id": "Q043",
+    "difficulty": "hard",
+    "tags": ["concept", "application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "How does applying the Abstract Factory pattern to Lexi's GUIFactory support portability across window systems?"},
+      {"role": "assistant", "content": "By creating widgets only through the GUIFactory interface (e.g., guiFactory->CreateScrollBar()), Lexi's code has no knowledge of the concrete widget classes. A MotifFactory creates Motif-specific widgets; a PMFactory creates PM-specific widgets. Changing the concrete factory at startup is sufficient to switch the entire look-and-feel, without modifying client code."}
+    ],
+    "id": "Q044",
+    "difficulty": "hard",
+    "tags": ["application", "analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What is the structural difference between the Adapter and Bridge patterns and what distinguishes their intents?"},
+      {"role": "assistant", "content": "Both patterns have similar structure with an abstraction delegating to an implementation object. Adapter is a remedial solution applied post-design to make unrelated classes work together by adapting an existing interface to match what the client expects. Bridge is designed upfront to decouple an abstraction from its implementation so both can vary independently, promoting extensibility from the start."}
+    ],
+    "id": "Q045",
+    "difficulty": "hard",
+    "tags": ["analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "What are the known uses of the Builder pattern in Smalltalk-80 mentioned in the notes?"},
+      {"role": "assistant", "content": "In Smalltalk-80: (1) The Parser in the compiler subsystem is a Director taking a ProgramNodeBuilder; (2) ClassBuilder is a builder that Classes use to create subclasses — Class is both Director and Product; (3) ByteCodeStream is a nonstandard builder that creates a compiled method as a byte array rather than a normal Smalltalk object."}
+    ],
+    "id": "Q046",
+    "difficulty": "hard",
+    "tags": ["application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "Explain the 'parameterized factory methods' variation of the Factory Method pattern."},
+      {"role": "assistant", "content": "In parameterized factory methods, the factory method takes a parameter identifying the kind of object to create, enabling one method to create multiple product types. All created objects share the Product interface. This reduces the number of distinct factory methods but requires the caller to supply a type identifier."}
+    ],
+    "id": "Q047",
+    "difficulty": "hard",
+    "tags": ["concept", "application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "How does Abstract Factory relate to Prototype in creating product objects?"},
+      {"role": "assistant", "content": "Abstract Factory can be implemented using Prototype: a concrete factory stores a set of prototypes and clones them to return product objects. This is useful when many product families are possible, since the factory does not need to be subclassed for each new product type — it is simply initialized with different prototype objects rather than defining new factory methods."}
+    ],
+    "id": "Q048",
+    "difficulty": "hard",
+    "tags": ["analysis", "application"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "Why does the notes' discussion conclude that Factory Method is the easiest creational pattern to use first, while Abstract Factory offers little improvement in the drawing editor context?"},
+      {"role": "assistant", "content": "Factory Method is easiest to use first because it only requires a new operation rather than new classes. Abstract Factory offers little improvement for the drawing editor because it requires an equally large GraphicsFactory class hierarchy parallel to the Graphics hierarchy, adding the same complexity without proportionate benefit. Prototype is ultimately better since Clone reduces class count and is reusable beyond instantiation."}
+    ],
+    "id": "Q049",
+    "difficulty": "hard",
+    "tags": ["analysis"]
+  },
+  {
+    "messages": [
+      {"role": "system", "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."},
+      {"role": "user", "content": "How do Behavioral class patterns and Behavioral object patterns differ in approach?"},
+      {"role": "assistant", "content": "Behavioral class patterns use inheritance to describe algorithms and flow of control, with relationships fixed at compile-time. Behavioral object patterns describe how a group of objects cooperate to perform a task that no single object can carry out alone, with relationships that are more dynamic and can be changed at run-time."}
+    ],
+    "id": "Q050",
+    "difficulty": "hard",
+    "tags": ["concept", "analysis"]
+  }
+
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the three key security objectives that form the CIA triad?"
+      },
+      {
+        "role": "assistant",
+        "content": "The three key objectives are: (1) Confidentiality \u2014 data must be hidden from unauthorized access, covering both data confidentiality and privacy; (2) Integrity \u2014 data can be protected from unauthorized change, including data integrity and system integrity; (3) Availability \u2014 data must be available to authorized users when needed. These form the fundamental security objectives for data and information services."
+      }
+    ],
+    "id": "Q051",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between passive attacks and active attacks?"
+      },
+      {
+        "role": "assistant",
+        "content": "A passive attack attempts to learn or make use of information from the system without affecting system resources (e.g., eavesdropping, traffic analysis). An active attack attempts to alter system resources or affect their operation (e.g., masquerade, replay, modification of messages, denial of service). Passive attacks are difficult to detect but can be prevented; active attacks are easier to detect but harder to prevent."
+      }
+    ],
+    "id": "Q052",
+    "difficulty": "easy",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the four categories of active attacks?"
+      },
+      {
+        "role": "assistant",
+        "content": "The four categories are: (1) Masquerade \u2014 one entity pretends to be a different entity; (2) Replay \u2014 passive capture of a data unit and its subsequent retransmission to produce an unauthorized effect; (3) Modification of messages \u2014 altering, delaying, or reordering a legitimate message; (4) Denial of service \u2014 preventing or inhibiting normal use of communications facilities."
+      }
+    ],
+    "id": "Q053",
+    "difficulty": "easy",
+    "tags": [
+      "concept",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the five ingredients of a symmetric encryption scheme?"
+      },
+      {
+        "role": "assistant",
+        "content": "The five ingredients are: (1) Plain Text \u2014 the original readable input; (2) Encryption Algorithm \u2014 performs substitutions and transformations on plaintext; (3) Secret Key \u2014 a value independent of plaintext and algorithm that determines transformations; (4) Cipher Text \u2014 the scrambled output; (5) Decryption Algorithm \u2014 the encryption algorithm in reverse, takes ciphertext and secret key to produce original plaintext."
+      }
+    ],
+    "id": "Q054",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the Caesar cipher and how is it mathematically expressed?"
+      },
+      {
+        "role": "assistant",
+        "content": "The Caesar cipher is the earliest known substitution cipher, where each letter of the alphabet is replaced by the letter standing three places further down. Mathematically, C = E(k, p) = (p + k) mod 26, where k=3 for the classic Caesar cipher. Decryption is p = D(k, C) = (C - k) mod 26. The alphabet wraps around so Z is followed by A."
+      }
+    ],
+    "id": "Q055",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is steganography and how does it differ from cryptography?"
+      },
+      {
+        "role": "assistant",
+        "content": "Steganography conceals the existence of a message, while cryptography renders the message unintelligible to outsiders by various transformations of the text. Steganographic techniques include character marking with pencil, invisible ink, pin punctures on selected letters, and typewritten correction ribbon between lines \u2014 all making the message hidden rather than encrypted."
+      }
+    ],
+    "id": "Q056",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the DES algorithm and what are its key parameters?"
+      },
+      {
+        "role": "assistant",
+        "content": "DES (Data Encryption Standard) is a symmetric-key block cipher published by NIST, implemented as a Feistel Cipher with 16 rounds. Block size is 64 bits, key length is 64 bits, but the effective key length is 56 bits since 8 of the 64 bits function only as check bits and are not used by the encryption algorithm."
+      }
+    ],
+    "id": "Q057",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the features of the AES algorithm?"
+      },
+      {
+        "role": "assistant",
+        "content": "AES features: symmetric key symmetric block cipher; 128-bit data with 128/192/256-bit keys; stronger and faster than Triple-DES; full specification and design details provided; software implementable in C and Java. AES uses 10 rounds for 128-bit keys, 12 rounds for 192-bit keys, and 14 rounds for 256-bit keys."
+      }
+    ],
+    "id": "Q058",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is a one-time pad and why is it unbreakable?"
+      },
+      {
+        "role": "assistant",
+        "content": "A one-time pad uses a random key as long as the message, used to encrypt and decrypt a single message, then discarded. It is unbreakable because the cipher text has no statistical relationship to the plaintext \u2014 it produces random output bearing no information about the plaintext \u2014 so there is simply no way to break the code. Each new message requires a new key of the same length."
+      }
+    ],
+    "id": "Q059",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the RSA algorithm and what is its public and private key format?"
+      },
+      {
+        "role": "assistant",
+        "content": "RSA (Rivest-Shamir-Adleman) is a block cipher where plaintext and ciphertext are integers between 0 and n-1. Encryption: C = Me mod n; Decryption: M = Cd mod n. The public key is PU = {e, n} and the private key is PR = {d, n}. A typical size for n is 1024 bits (309 decimal digits)."
+      }
+    ],
+    "id": "Q060",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is a Message Authentication Code (MAC)?"
+      },
+      {
+        "role": "assistant",
+        "content": "A MAC is a small fixed-size block of data (cryptographic checksum) generated using a secret key appended to a message. It is calculated as MAC = Ck(M). The receiver independently computes a new MAC with the shared secret key and compares it to the received MAC. A matching MAC assures the message has not been altered and comes from the alleged sender."
+      }
+    ],
+    "id": "Q061",
+    "difficulty": "easy",
+    "tags": [
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the required properties of a cryptographic hash function?"
+      },
+      {
+        "role": "assistant",
+        "content": "A hash function H must: (1) be applicable to a message of any size; (2) produce fixed-length output; (3) be computationally easy to compute H(M) for any M; (4) be one-way \u2014 infeasible to find M given H(M)=h; (5) have weak collision resistance \u2014 infeasible to find M' such that H(M')=H(M) for a given M; (6) have strong collision resistance \u2014 infeasible to find any M and M' with H(M)=H(M')."
+      }
+    ],
+    "id": "Q062",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is Kerberos and where was it developed?"
+      },
+      {
+        "role": "assistant",
+        "content": "Kerberos is an authentication service developed as part of Project Athena at MIT. It addresses threats in open distributed environments where users at workstations wish to access services on servers distributed throughout the network. Its four requirements are: Secure, Reliable, Transparent (user unaware of authentication), and Scalable."
+      }
+    ],
+    "id": "Q063",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is X.509 and what is its basis?"
+      },
+      {
+        "role": "assistant",
+        "content": "X.509 is an ITU-T recommendation part of the X.500 series defining a directory service. It is based on public-key cryptography and digital signatures. The heart of X.509 is the public-key certificate associated with each user, created by a trusted Certification Authority (CA) and placed in the directory."
+      }
+    ],
+    "id": "Q064",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the two types of passive attacks?"
+      },
+      {
+        "role": "assistant",
+        "content": "The two types of passive attacks are: (1) Release of message contents \u2014 an opponent learns the contents of a transmission such as a telephone conversation, email, or file; (2) Traffic analysis \u2014 even if message contents are masked by encryption, an opponent can observe traffic patterns to gain information. Prevention through encryption is the primary defense against passive attacks."
+      }
+    ],
+    "id": "Q065",
+    "difficulty": "easy",
+    "tags": [
+      "concept",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the two types of two-way attackers in the Network Access Security Model?"
+      },
+      {
+        "role": "assistant",
+        "content": "The two types are: (1) Hackers \u2014 interested only in penetrating the system without causing harm, satisfied simply by gaining access; (2) Intruders \u2014 intend to cause damage to the system or obtain information that can be used for financial gain. The model also describes two security measures: gatekeeper functions (login/passwords) and internal controls (antivirus)."
+      }
+    ],
+    "id": "Q066",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the five block cipher modes of operation defined by NIST?"
+      },
+      {
+        "role": "assistant",
+        "content": "The five modes defined by NIST are: (1) Electronic Code Book (ECB) \u2014 each block encrypted independently with the same key; (2) Cipher Block Chaining (CBC) \u2014 uses XOR with previous ciphertext block and an IV; (3) Cipher Feedback (CFB) \u2014 previous ciphertext is encrypted and XORed with plaintext; (4) Output Feedback (OFB) \u2014 successive output blocks are fed back as keystream; (5) Counter (CTR) \u2014 encrypts counter values XORed with plaintext."
+      }
+    ],
+    "id": "Q067",
+    "difficulty": "easy",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the Feistel cipher design parameters that influence security?"
+      },
+      {
+        "role": "assistant",
+        "content": "The key design parameters are: (1) Block size \u2014 larger means greater security but reduced speed; (2) Key size \u2014 larger means greater resistance to brute-force but may reduce speed (64 bits is inadequate, 128 bits common); (3) Number of rounds \u2014 typically 16; (4) Sub-key generation algorithm \u2014 greater complexity leads to greater cryptanalytic difficulty; (5) Round function F \u2014 greater complexity means greater resistance to cryptanalysis."
+      }
+    ],
+    "id": "Q068",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "analysis"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are Diffusion and Confusion in the Feistel cipher?"
+      },
+      {
+        "role": "assistant",
+        "content": "Diffusion is a cryptographic technique that obscures the statistical structure of plaintext by spreading out the influence of each individual plaintext digit over many ciphertext digits. Confusion seeks to make the relationship between ciphertext statistics and the encryption key as complex as possible, achieved by a complex scrambling algorithm depending on both key and input."
+      }
+    ],
+    "id": "Q069",
+    "difficulty": "medium",
+    "tags": [
+      "definition",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "How does CBC mode differ from ECB mode of operation?"
+      },
+      {
+        "role": "assistant",
+        "content": "ECB encrypts each block independently with the same key, making it deterministic \u2014 identical plaintext blocks always produce identical ciphertext blocks. CBC introduces message dependence by XORing each plaintext block with the previous ciphertext block (using an IV for the first block) before encryption, making the system non-deterministic and preventing pattern leakage from identical plaintext blocks."
+      }
+    ],
+    "id": "Q070",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "analysis"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the four sub-processes in each AES encryption round?"
+      },
+      {
+        "role": "assistant",
+        "content": "Each AES round consists of: (1) Byte Substitution (Sub Bytes) \u2014 16 input bytes are substituted using a fixed S-box table; (2) Shift Rows \u2014 rows of the matrix are shifted left by increasing offsets (0, 1, 2, 3 bytes); (3) Mix Columns \u2014 each column is transformed using a mathematical function (not performed in the last round); (4) Add Round Key \u2014 matrix is XORed with the 128-bit round key."
+      }
+    ],
+    "id": "Q071",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "application"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the RSA key generation process? Provide the example from the notes."
+      },
+      {
+        "role": "assistant",
+        "content": "RSA key generation: (1) Select two primes p and q; (2) Compute n = pq; (3) Compute \u00f8(n) = (p-1)(q-1); (4) Select e such that gcd(e, \u00f8(n))=1; (5) Determine d such that de \u2261 1 mod \u00f8(n). From the notes: p=17, q=11, n=187, \u00f8(n)=160, e=7, d=23. Public key: {7,187}; Private key: {23,187}. For M=88: Encryption C=887 mod 187=11; Decryption M=1123 mod 187=88."
+      }
+    ],
+    "id": "Q072",
+    "difficulty": "medium",
+    "tags": [
+      "application",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the Playfair cipher and its key rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "The Playfair cipher treats digrams (pairs of letters) in plaintext as single units, using a 5x5 matrix built from a keyword. Rules: (1) Repeating letters in a pair are separated with a filler (e.g., 'x'); (2) Same-row letters are each replaced by the letter to the right (circular); (3) Same-column letters are replaced by the letter below (circular); (4) Otherwise each letter is replaced by the letter in its own row and the other letter's column."
+      }
+    ],
+    "id": "Q073",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the Hill cipher and how does it work?"
+      },
+      {
+        "role": "assistant",
+        "content": "The Hill cipher, developed by Lester Hill in 1929, takes m successive plaintext letters and substitutes m ciphertext letters using m linear equations. For m=3: ci = (ki1P1 + ki2P2 + ki3P3) mod 26, expressed as C = PK mod 26 where P and C are column vectors and K is the key matrix. Decryption is P = CK-1 mod 26."
+      }
+    ],
+    "id": "Q074",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "application"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the five security services defined in the notes?"
+      },
+      {
+        "role": "assistant",
+        "content": "The five security services are: (1) Confidentiality \u2014 protection of transmitted data from passive attacks; (2) Authentication \u2014 assurance that communication is authentic and from the intended source; (3) Integrity \u2014 assurance that data cannot be modified without authorization; (4) Non-repudiation \u2014 prevents sender or receiver from denying a transmitted message; (5) Access Control \u2014 ability to control the level of access that individuals or entities have to a network or system."
+      }
+    ],
+    "id": "Q075",
+    "difficulty": "easy",
+    "tags": [
+      "definition",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the SHA-1 algorithm input/output specification and its processing structure?"
+      },
+      {
+        "role": "assistant",
+        "content": "SHA-1 takes as input a message with maximum length less than 264 bits and produces a 160-bit message digest. Input is processed in 512-bit blocks. The processing involves: (1) Append Padding Bits; (2) Append Length (64-bit block); (3) Initialize 160-bit MD buffer (registers A=67452301, B=EFCDAB89, C=98BADCFE, D=10325476, E=C3D2E1F0); (4) Process 512-bit blocks through four rounds of 20 steps each; (5) Output 160-bit digest."
+      }
+    ],
+    "id": "Q076",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the HMAC design objectives listed in the notes?"
+      },
+      {
+        "role": "assistant",
+        "content": "The HMAC design objectives are: (1) Use available hash functions without modifications; (2) Allow easy replaceability of the embedded hash function; (3) Preserve the original performance of the hash function; (4) Use and handle keys in a simple way; (5) Have well-understood cryptographic analysis of the MAC's strength based on reasonable assumptions on the embedded hash function."
+      }
+    ],
+    "id": "Q077",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the three classes of functions used to produce an authenticator in message authentication?"
+      },
+      {
+        "role": "assistant",
+        "content": "The three classes are: (1) Message encryption \u2014 ciphertext serves as authenticator; (2) Message Authentication Code (MAC) \u2014 a public function of the message and a secret key producing a fixed-length value; it does not provide a digital signature since both parties share the same key; (3) Hash function \u2014 a public function mapping an arbitrary-length message into a fixed-length hash value; it does not provide a digital signature as there is no key."
+      }
+    ],
+    "id": "Q078",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the components of the Network Security Model?"
+      },
+      {
+        "role": "assistant",
+        "content": "The Network Security Model includes: a sender and receiver who mutually agree to exchange information; an information channel (Internet service); a security-related transformation on information (encryption); shared secret information (encryption key) unknown to opponents; and a trusted third party responsible for distributing the secret key to both communicating parties while preventing opponent access."
+      }
+    ],
+    "id": "Q079",
+    "difficulty": "medium",
+    "tags": [
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the steps of the HMAC algorithm?"
+      },
+      {
+        "role": "assistant",
+        "content": "The seven steps of HMAC are: (1) Append zeroes to K to create b-bit K+; (2) XOR K+ with ipad to produce block Si; (3) Append message M to Si; (4) Apply hash function H to the stream from step 3; (5) XOR K+ with opad to produce block S0; (6) Append hash result from step 4 to S0; (7) Apply H to the stream from step 6 and output the result."
+      }
+    ],
+    "id": "Q080",
+    "difficulty": "medium",
+    "tags": [
+      "application",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the Digital Signature Standard (DSS) and how does it differ from RSA for digital signatures?"
+      },
+      {
+        "role": "assistant",
+        "content": "DSS is FIPS 186 published by NIST, using SHA and the Digital Signature Algorithm (DSA). DSS is designed only for digital signature and cannot be used for encryption or key exchange. RSA can be used for both. In RSA signing, the hash is encrypted with the sender's private key; in DSS, the hash and a random number k are input to a signature function that also depends on the sender's private key and global public key, producing two signature components s and r."
+      }
+    ],
+    "id": "Q081",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "analysis"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the limitations of Kerberos Version 4?"
+      },
+      {
+        "role": "assistant",
+        "content": "Version 4 limitations fall into two categories. Environmental shortcomings: DES encryption system dependence; Internet protocol dependence; ticket lifetime limitations; authentication forwarding issues; inter-realm authentication problems. Technical deficiencies: double encryption; session key issues; and vulnerability to password attacks."
+      }
+    ],
+    "id": "Q082",
+    "difficulty": "medium",
+    "tags": [
+      "analysis",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is a Kerberos realm?"
+      },
+      {
+        "role": "assistant",
+        "content": "A Kerberos realm is a full-service Kerberos environment consisting of a Kerberos server, a number of clients, and a number of application servers. It is a set of managed nodes that share the same Kerberos database and are part of the same administrative domain. If multiple realms exist, their Kerberos servers must share keys and trust each other."
+      }
+    ],
+    "id": "Q083",
+    "difficulty": "easy",
+    "tags": [
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the elements included in an X.509 certificate?"
+      },
+      {
+        "role": "assistant",
+        "content": "An X.509 certificate includes: version (1, 2, or 3); serial number (unique within CA); signature algorithm identifier; issuer X.500 name (CA); period of validity (from-to dates); subject X.500 name; subject public-key info (algorithm, parameters, key); issuer unique identifier (v2+); subject unique identifier (v2+); extension fields (v3); and a signature (hash of all fields)."
+      }
+    ],
+    "id": "Q084",
+    "difficulty": "medium",
+    "tags": [
+      "definition",
+      "fact"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is CMAC and what problem does it fix over CBC-MAC?"
+      },
+      {
+        "role": "assistant",
+        "content": "CMAC (Cipher-based Message Authentication Code) is a block cipher-based MAC algorithm that provides assurance of authenticity and integrity of binary data. It fixes the security deficiency of CBC-MAC, which is secure only for fixed-length messages. CMAC is equivalent to OMAC1, an improvement of the XCBC algorithm, and requires only one key instead of three keys as in XCBC."
+      }
+    ],
+    "id": "Q085",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the Diffie-Hellman Key Exchange algorithm and why is K1 equal to K2?"
+      },
+      {
+        "role": "assistant",
+        "content": "Diffie-Hellman Key Exchange, devised in 1976, allows two parties to agree on a symmetric key without prior shared secret. Alice computes K1 = B^X mod n where B = g^Y mod n, giving K1 = g^(YX) mod n. Bob computes K2 = A^Y mod n where A = g^X mod n, giving K2 = g^(XY) mod n. Since KYX = KXY mathematically, K1 = K2 = K, the shared symmetric key."
+      }
+    ],
+    "id": "Q086",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "application"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the two types of Connection-Oriented and Connectionless Integrity Services?"
+      },
+      {
+        "role": "assistant",
+        "content": "Connection-Oriented Integrity Service deals with a stream of messages and assures messages are received as sent, with no duplication, insertion, modification, reordering, or replays \u2014 it attends to both message stream modification and denial of service. Connectionless-Oriented Integrity Service deals with individual messages regardless of context, providing protection against message modification only, not replay or reordering."
+      }
+    ],
+    "id": "Q087",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the differences between stream ciphers and block ciphers?"
+      },
+      {
+        "role": "assistant",
+        "content": "A stream cipher encrypts a digital data stream one bit or one byte at a time (e.g., Vigen\u00e8re, Vernam cipher). A block cipher treats a block of plaintext (typically 64 or 128 bits) as a whole to produce a ciphertext block of equal length. Block ciphers seem applicable to a broader range of applications; the vast majority of network-based symmetric cryptographic applications use block ciphers."
+      }
+    ],
+    "id": "Q088",
+    "difficulty": "easy",
+    "tags": [
+      "concept",
+      "definition"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the DES round function (F) components and their operations?"
+      },
+      {
+        "role": "assistant",
+        "content": "The DES round function F takes the 32-bit right half and a 48-bit round key and produces 32-bit output. Steps: (1) Expansion Permutation Box \u2014 expands the 32-bit right input to 48 bits; (2) XOR with the 48-bit round key; (3) Substitution Boxes (S-boxes) \u2014 8 S-boxes each take 6-bit input and produce 4-bit output, performing real mixing (confusion); (4) Straight Permutation \u2014 the 32-bit combined S-box output is subjected to a straight permutation."
+      }
+    ],
+    "id": "Q089",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "application"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What is the three-phase authentication dialogue in Kerberos Version 4?"
+      },
+      {
+        "role": "assistant",
+        "content": "The three phases are: Phase 1 \u2014 Authentication Service Exchange: client requests a Ticket-Granting Ticket (TGT) from the AS, receives the TGT plus session key encrypted with the user's password key. Phase 2 \u2014 Ticket-Granting Service Exchange: client presents TGT and authenticator to the TGS to obtain a service-granting ticket. Phase 3 \u2014 Client/Server Authentication Exchange: client presents the service ticket and authenticator to the application server for mutual authentication."
+      }
+    ],
+    "id": "Q090",
+    "difficulty": "medium",
+    "tags": [
+      "concept",
+      "application"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "How does the RSA requirement Med mod n = M relate to Euler's totient function?"
+      },
+      {
+        "role": "assistant",
+        "content": "The relationship Med mod n = M holds when e and d are multiplicative inverses modulo \u00f8(n) \u2014 Euler's totient function. For primes p and q, \u00f8(pq) = (p-1)(q-1). The relationship between e and d is expressed as ed mod \u00f8(n) = 1, meaning d is the multiplicative inverse of e mod \u00f8(n). This requires gcd(\u00f8(n), d) = 1 \u2014 d and e must be relatively prime to \u00f8(n)."
+      }
+    ],
+    "id": "Q091",
+    "difficulty": "hard",
+    "tags": [
+      "concept",
+      "analysis"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "How does AES differ fundamentally from DES in its cryptographic structure?"
+      },
+      {
+        "role": "assistant",
+        "content": "AES is an iterative cipher based on a substitution-permutation network, while DES is based on the Feistel structure. AES performs all computations on bytes (treating 128-bit plaintext as 16 bytes in a 4x4 matrix), and encryption/decryption algorithms must be separately implemented since sub-processes run in reverse order. In DES (Feistel), decryption uses the same algorithm as encryption with subkeys applied in reverse order."
+      }
+    ],
+    "id": "Q092",
+    "difficulty": "hard",
+    "tags": [
+      "analysis",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "Why does the notes state that even MD5 remains secure for use in HMAC despite collision vulnerabilities?"
+      },
+      {
+        "role": "assistant",
+        "content": "HMAC's security requires an attacker to either compute an output of the compression function with a random, secret IV (brute force with work of order 2n), or find collisions in the hash function when the IV is random and secret. A birthday attack requires 2(n/2) work but also requires observing 2n blocks of messages using the same key \u2014 making it very unlikely in practice. These constraints make MD5 still secure for HMAC even given known collision weaknesses."
+      }
+    ],
+    "id": "Q093",
+    "difficulty": "hard",
+    "tags": [
+      "analysis",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Arbitrated Digital Signature scheme using Conventional encryption as described in the notes."
+      },
+      {
+        "role": "assistant",
+        "content": "X constructs message M and computes H(M). X transmits to arbiter A: M || E(Kxa, [IDx || H(M)]). A decrypts, validates the hash, then sends to Y: E(Kay, [IDx || M || E(Kxa, [IDx||H(M)]) || T]). The arbiter validates authenticity before forwarding with a timestamp. The problem is that the arbiter could form an alliance with the sender to deny a signed message or with the receiver to forge the sender's signature."
+      }
+    ],
+    "id": "Q094",
+    "difficulty": "hard",
+    "tags": [
+      "application",
+      "analysis"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "How does the X.509 certificate hierarchy allow user A to verify a certificate from a CA outside its own CA?"
+      },
+      {
+        "role": "assistant",
+        "content": "If A has a certificate from CA X1 and B has one from CA X2, A cannot directly verify B's certificate. The solution involves a chain: A obtains X1<<X2>> (X2's certificate signed by X1) from the directory to get X2's public key, then obtains X2<<B>> (B's certificate signed by X2) to securely get B's public key. In a hierarchy, the chain can span multiple CAs: X<<W>>W<<V>>V<<Y>>Y<<Z>>Z<<B>>."
+      }
+    ],
+    "id": "Q095",
+    "difficulty": "hard",
+    "tags": [
+      "application",
+      "analysis"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the four tasks a security model designer must consider according to the Network Security Model?"
+      },
+      {
+        "role": "assistant",
+        "content": "The four tasks are: (1) Design an appropriate algorithm to transform readable messages into unreadable format, difficult for an opponent to crack; (2) Generate secret information (key) used in conjunction with the security algorithm to transform messages; (3) Develop methods to distribute the key to both sender and receiver without opponent interference, using a trusted third party; (4) Specify a protocol enabling sender and receiver to use the transformation algorithm and key for security."
+      }
+    ],
+    "id": "Q096",
+    "difficulty": "hard",
+    "tags": [
+      "concept",
+      "application"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the specific X.800 authentication services and what does each assure?"
+      },
+      {
+        "role": "assistant",
+        "content": "X.800 defines two specific authentication services: (1) Peer entity authentication \u2014 verifies identities of peer entities involved in communication, used at connection establishment and during data transmission; provides confidence against masquerade or replay attacks; (2) Data origin authentication \u2014 assures the authenticity of the source of a data unit but does not protect against duplication or modification; supports applications like email where no prior interactions occur between communicating entities."
+      }
+    ],
+    "id": "Q097",
+    "difficulty": "hard",
+    "tags": [
+      "definition",
+      "analysis"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "How does the CMAC tag generation process work and what are the two sub-keys?"
+      },
+      {
+        "role": "assistant",
+        "content": "CMAC generates two b-bit sub-keys k1 and k2 from k0=Ek(0). If msb(k0)=0 then k1=k0<<1, else k1=(k0<<1)\u2295C. k2 is derived similarly from k1. For tag generation: message is divided into b-bit blocks; the last block mn is XORed with k1 if complete or with k2 and padded if incomplete; CBC-MAC is then applied to all blocks; the output tag t = msb\u2113(cn) of the specified length \u2113 bits."
+      }
+    ],
+    "id": "Q098",
+    "difficulty": "hard",
+    "tags": [
+      "application",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "What are the three characteristics that enabled brute-force cryptanalysis of Caesar cipher?"
+      },
+      {
+        "role": "assistant",
+        "content": "The three characteristics are: (1) The encryption and decryption algorithms are known; (2) There are only 25 keys to try; (3) The language of the plaintext is known and easily recognizable. These conditions together make exhaustive key search feasible for the Caesar cipher since all 25 possible shifts can be tried and the correct plaintext identified by its natural language properties."
+      }
+    ],
+    "id": "Q099",
+    "difficulty": "hard",
+    "tags": [
+      "analysis",
+      "concept"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a technical assistant specializing in EW systems. Answer questions accurately and concisely based on your knowledge."
+      },
+      {
+        "role": "user",
+        "content": "Why is the simple columnar transposition cipher easily recognized and what enhances its security?"
+      },
+      {
+        "role": "assistant",
+        "content": "A pure transposition cipher is easily recognized because it has the same letter frequencies as the original plaintext \u2014 only the order of characters changes, not the characters themselves. Cryptanalysis involves laying out the ciphertext in a matrix and adjusting column positions using digram and trigram frequency tables. Security is significantly enhanced by performing more than one stage of transposition, creating a more complex permutation that is not easily reconstructed."
+      }
+    ],
+    "id": "Q100",
+    "difficulty": "hard",
+    "tags": [
+      "analysis",
+      "concept"
+    ]
+  }
+

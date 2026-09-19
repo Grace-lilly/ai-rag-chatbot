@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block head_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}?v=3" />
+{% endblock %}
+
+{% block content %}
+  <div class="overlay layer" id="loading-overlay">
+    <div class="overlay-card">
+      <div style="width:120px;height:120px;margin:0 auto;">
+        <svg viewBox="0 0 260 260" width="120" height="120" aria-hidden="true">
+          <rect class="rect-1" x="20" y="70" width="180" height="120" rx="10" />
+          <rect class="rect-2" x="45" y="45" width="160" height="140" rx="10" />
+          <rect class="rect-3" x="70" y="25" width="140" height="170" rx="10" />
+        </svg>
+      </div>
+      <div class="overlay-title">INITIALIZING SYSTEM</div>
+      <div class="overlay-msg" id="overlay-message">Loading Qwen 1.5B neural engine...</div>
+      <div class="overlay-bar"><div></div></div>
+      <div class="overlay-msg" style="margin-top: 14px;">
+        This takes approximately 30 seconds on first load.
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar layer">
+    <div class="navbar-inner">
+      <div class="nav-left">
+        <button class="hamburger-btn" type="button" id="sidebar-toggle" aria-label="Toggle sidebar">≡</button>
+
+        <div class="brand-small">
+          <div class="name">
+            <span class="blue-dot" aria-hidden="true"></span>
+            <span>DocuMind RAG</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <button class="nav-btn" type="button" id="temp-chat-btn">
+          <span aria-hidden="true">🕒</span>
+          <span class="label">TEMP CHAT</span>
+          <span class="nav-badge" style="display:none;" id="temp-chat-badge">TEMP</span>
+        </button>
+
+        <button class="nav-btn" type="button" id="upload-doc-btn">
+          <span aria-hidden="true">⬆</span>
+          <span class="label">UPLOAD DOC</span>
+          <span class="nav-badge" id="indexed-doc-count">0</span>
+        </button>
+
+        <button class="nav-btn" type="button" id="temp-doc-btn" title="Temporary documents are session only.">
+          <span aria-hidden="true">⚡</span>
+          <span class="label">TEMP DOC</span>
+          <span class="nav-badge" id="temp-doc-badge" style="display:none;">•</span>
+        </button>
+
+        <div class="user-menu">
+          <div style="display:flex;align-items:center;gap:10px;cursor:pointer;" id="user-menu-btn">
+            <div class="avatar">{{ current_user.username[0]|upper }}</div>
+            <div class="mono" style="font-size:12px;color:var(--text-muted);">
+              {{ current_user.username }} ▼
+            </div>
+          </div>
+          <div class="dropdown" id="user-dropdown">
+            <a href="{{ url_for('chat') }}">Profile</a>
+            <a href="{{ url_for('auth_logout') }}">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout layer">
+    <aside class="sidebar layer" id="sidebar">
+      <div class="sidebar-inner">
+        <button class="new-chat-btn" id="new-chat-btn" type="button">+ NEW CONVERSATION</button>
+        <div class="history-groups" id="session-groups"></div>
+        <div class="sidebar-footer">
+        </div>
+      </div>
+    </aside>
+
+    <main class="chat-panel layer">
+      <div class="messages" id="messages">
+        <div class="empty-state" id="empty-state">
+          <div style="width:80px;height:80px;">
+            <svg viewBox="0 0 260 260" width="80" height="80" aria-hidden="true">
+              <rect class="rect-1" x="20" y="70" width="180" height="120" rx="10" />
+              <rect class="rect-2" x="45" y="45" width="160" height="140" rx="10" />
+              <rect class="rect-3" x="70" y="25" width="140" height="170" rx="10" />
+            </svg>
+          </div>
+          <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;">Start a new conversation</div>
+          <div class="empty-state-description" style="font-family:'Lora',serif;line-height:1.6;max-width:560px;text-align:center;">
+            Ask a question or upload a document to begin.
+          </div>
+        </div>
+      </div>
+
+      <div class="input-bar">
+        <div class="input-row">
+          <input type="file" id="attach-input" accept="application/pdf" style="display:none;" />
+          <button class="attach-btn" type="button" id="attach-btn" title="Attach a temporary PDF for this session">📎</button>
+          <div style="position:relative;">
+            <textarea
+              id="question-input"
+              class="question-input"
+              rows="1"
+              placeholder="Ask anything about your documents..."
+            ></textarea>
+            <div class="char-counter" id="char-counter">0 / 150</div>
+          </div>
+          <button class="cancel-btn" type="button" id="cancel-btn" disabled> STOP </button>
+          <button class="send-btn" type="button" id="send-btn" disabled> SEND → </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Permanent Document Drawer -->
+  <section class="drawer" id="permanent-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="title">
+        KNOWLEDGE BASE DOCUMENTS
+      </div>
+      <button class="drawer-close" type="button" id="perm-drawer-close">✕ Close</button>
+    </div>
+    <div class="drawer-body">
+      <div
+        class="dropzone"
+        id="perm-dropzone"
+        role="button"
+        tabindex="0"
+      >
+        Drop PDF files here or click to browse<br />
+        <span style="color:var(--text-dim;font-size:11px;">PDF only · Max 50 MB per file</span>
+      </div>
+
+      <div class="pipeline-steps">
+        <div class="pipeline-step-row queued" id="perm-step-0" data-step-idx="0">
+          <div class="pipeline-left">
+            <span class="stage-dot" aria-hidden="true"></span>
+            <div class="pipeline-step-meta">
+              <div class="pipeline-step-name">Step 1: PDF → Markdown (marker_single)</div>
+            </div>
+          </div>
+          <div class="stage-badge" id="perm-badge-0">[QUEUED]</div>
+        </div>
+
+        <div class="pipeline-step-row queued" id="perm-step-1" data-step-idx="1">
+          <div class="pipeline-left">
+            <span class="stage-dot" aria-hidden="true"></span>
+            <div class="pipeline-step-meta">
+              <div class="pipeline-step-name">Step 2: Generate Embeddings (embeddings.py)</div>
+            </div>
+          </div>
+          <div class="stage-badge" id="perm-badge-1">[QUEUED]</div>
+        </div>
+
+        <div class="pipeline-step-row queued" id="perm-step-2" data-step-idx="2">
+          <div class="pipeline-left">
+            <span class="stage-dot" aria-hidden="true"></span>
+            <div class="pipeline-step-meta">
+              <div class="pipeline-step-name">Step 3: Fine-tune Model (train_qlora.py)</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="stage-badge optional-badge" id="perm-optional-badge">[OPTIONAL]</div>
+            <div class="stage-badge" id="perm-badge-2">[SKIP / RUN]</div>
+            {% if can_finetune %}
+              <button class="finetune-btn" type="button" id="finetune-btn" title="⚠ This will take several hours. Only run when sufficient new Q&A training data exists. The system remains usable during fine-tuning.">
+                RUN FINE-TUNE
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="documents-table" style="margin-top:16px;">
+        <div class="mono" style="color:var(--text-muted);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">
+          INDEXED DOCUMENTS
+        </div>
+        <div id="document-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Temporary Document Drawer -->
+  <section class="drawer" id="temp-drawer" aria-hidden="true" style="border-color: rgba(245,158,11,0.5);">
+    <div class="drawer-header" style="border-bottom:1px solid rgba(31,45,69,0.9);">
+      <div class="title" style="color: var(--warning);">
+        ⚡ TEMPORARY DOCUMENT — Session Only
+      </div>
+      <button class="drawer-close" type="button" id="temp-drawer-close">✕ Close</button>
+    </div>
+    <div class="drawer-body">
+      <div style="color:var(--text-muted);font-family:'Lora',serif;line-height:1.6;margin-bottom:12px;">
+        This document is only used for this session and deleted when you log out.
+      </div>
+
+      <div class="dropzone" id="temp-dropzone" style="border-color: rgba(245,158,11,0.5);">
+        Drop a PDF here or click to browse<br />
+        <span style="color:var(--text-dim;font-size:11px;">Only Steps 1 and 2 run</span>
+      </div>
+
+      <div class="pipeline-steps" style="margin-top:14px;">
+        <div class="pipeline-step-row queued" id="temp-step-0" data-step-idx="0">
+          <div class="pipeline-left">
+            <span class="stage-dot" aria-hidden="true"></span>
+            <div class="pipeline-step-meta">
+              <div class="pipeline-step-name">Step 1: PDF → Markdown</div>
+            </div>
+          </div>
+          <div class="stage-badge" id="temp-badge-0">[QUEUED]</div>
+        </div>
+
+        <div class="pipeline-step-row queued" id="temp-step-1" data-step-idx="1">
+          <div class="pipeline-left">
+            <span class="stage-dot" aria-hidden="true"></span>
+            <div class="pipeline-step-meta">
+              <div class="pipeline-step-name">Step 2: Generate Embeddings</div>
+            </div>
+          </div>
+          <div class="stage-badge" id="temp-badge-1">[QUEUED]</div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;">
+          <div class="mono" style="color:var(--text-muted);font-size:11px;letter-spacing:2px;text-transform:uppercase;">
+            Temporary Documents (<span id="temp-doc-count">0</span>)
+          </div>
+          <button class="doc-delete" type="button" id="temp-doc-remove-btn" title="Remove all temp documents">✕</button>
+        </div>
+
+        <div class="temp-docs-scroll" id="temp-docs-scroll" style="display:none;">
+          <div id="temp-doc-list"></div>
+        </div>
+        <div id="temp-note" style="color:var(--text-muted);font-family:'IBM Plex Mono',monospace;font-size:11px;display:block;">
+          NOTE: Temporary documents skip fine-tuning entirely. Only Steps 1 and 2 run.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fine-tune confirm modal -->
+  <div class="modal-backdrop" id="finetune-modal" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-title">Fine-tune Warning</div>
+      <div class="modal-body">
+        ⚠ Fine-tuning Qwen 1.5B may take 2–4 hours. The chatbot remains available during this time. Continue?
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" type="button" id="finetune-cancel">Cancel</button>
+        <button class="btn-warning" type="button" id="finetune-confirm">Yes, Start Fine-tuning</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container layer" id="toast-container"></div>
+
+  <!-- Marked.js + DOMPurify for safe markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.3/dist/purify.min.js"></script>
+  <script type="module" src="{{ url_for('static', filename='js/chat.js') }}?v=3"></script>
+{% endblock %}
+

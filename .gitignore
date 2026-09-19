@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Local model weights (too large for GitHub)
+models/**
+!models/README.md
+!models/.gitkeep
+
+# Hugging Face / transformers caches
+hf_cache/
+.cache/
+
+# Vector store and runtime data
+chroma_store/
+data/markdowns/**
+!data/markdowns/perm/
+!data/markdowns/temp/
+!data/markdowns/perm/.gitkeep
+!data/markdowns/temp/.gitkeep
+*.zip
+
+# Uploads and SQLite
+rag_chatbot/static/uploads/permanent/**
+rag_chatbot/static/uploads/temp/**
+!rag_chatbot/static/uploads/permanent/.gitkeep
+!rag_chatbot/static/uploads/temp/.gitkeep
+rag_chatbot/instance/*.db
+rag_chatbot/instance/*.db-journal
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

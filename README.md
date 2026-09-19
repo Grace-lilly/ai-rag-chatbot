@@ -55,8 +55,8 @@ PDF upload
 ## Setup
 
 ```bash
-git clone https://github.com/Grace-lilly/documind-rag.git
-cd documind-rag
+git clone https://github.com/Grace-lilly/ai-rag-chatbot.git
+cd ai-rag-chatbot
 python -m venv .venv
 
 # Windows
